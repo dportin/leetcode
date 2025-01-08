@@ -1,0 +1,208 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 25,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "base",
+      "hidden": true,
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "installDir": "${sourceDir}/install/${presetName}"
+    },
+    {
+      "name": "windows",
+      "hidden": true,
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Windows"
+      }
+    },
+    {
+      "name": "linux",
+      "hidden": true,
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Linux"
+      }
+    },
+    {
+      "name": "make",
+      "hidden": true,
+      "generator": "Unix Makefiles"
+    },
+    {
+      "name": "ninja",
+      "hidden": true,
+      "generator": "Ninja"
+    },
+    {
+      "name": "debug",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "release",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "linux-clang19",
+      "hidden": true,
+      "toolchainFile": "cmake/toolchain/linux-native-clang.cmake",
+      "cacheVariables": {
+        "LLVM_VERSION": "19"
+      }
+    },
+    {
+      "name": "linux-make-clang19-debug",
+      "inherits": [
+        "base",
+        "linux",
+        "make",
+        "linux-clang19",
+        "debug"
+      ]
+    },
+    {
+      "name": "linux-make-clang19-release",
+      "inherits": [
+        "base",
+        "linux",
+        "make",
+        "linux-clang19",
+        "release"
+      ]
+    },
+    {
+      "name": "linux-ninja-clang19-debug",
+      "inherits": [
+        "base",
+        "linux",
+        "make",
+        "linux-clang19",
+        "debug"
+      ]
+    },
+    {
+      "name": "linux-ninja-clang19-release",
+      "inherits": [
+        "base",
+        "linux",
+        "make",
+        "linux-clang19",
+        "release"
+      ]
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "base",
+      "hidden": true,
+      "inheritConfigureEnvironment": true,
+      "targets": [
+        "solutions"
+      ],
+      "verbose": true
+    },
+    {
+      "name": "debug",
+      "hidden": true,
+      "configuration": "Debug"
+    },
+    {
+      "name": "release",
+      "hidden": true,
+      "configuration": "Release"
+    },
+    {
+      "name": "linux-make-clang19-debug",
+      "displayName": "linux-make-clang19-debug",
+      "configurePreset": "linux-make-clang19-debug",
+      "inherits": [
+        "base",
+        "debug"
+      ]
+    },
+    {
+      "name": "linux-make-clang19-release",
+      "displayName": "linux-make-clang19-release",
+      "configurePreset": "linux-make-clang19-release",
+      "inherits": [
+        "base",
+        "release"
+      ]
+    },
+    {
+      "name": "linux-ninja-clang19-debug",
+      "displayName": "linux-ninja-clang19-debug",
+      "configurePreset": "linux-ninja-clang19-debug",
+      "inherits": [
+        "base",
+        "debug"
+      ]
+    },
+    {
+      "name": "linux-ninja-clang19-release",
+      "displayName": "linux-ninja-clang19-release",
+      "configurePreset": "linux-ninja-clang19-release",
+      "inherits": [
+        "base",
+        "release"
+      ]
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "base",
+      "hidden": true,
+      "inheritConfigureEnvironment": true,
+      "output": {
+        "outputOnFailure": true
+      },
+      "execution": {
+        "stopOnFailure": true
+      }
+    },
+    {
+      "name": "linux-make-clang19-debug",
+      "displayName": "linux-make-clang19-debug",
+      "configurePreset": "linux-make-clang19-debug",
+      "inherits": [
+        "base"
+      ]
+    },
+    {
+      "name": "linux-make-clang19-release",
+      "displayName": "linux-make-clang19-release",
+      "configurePreset": "linux-make-clang19-release",
+      "inherits": [
+        "base"
+      ]
+    },
+    {
+      "name": "linux-ninja-clang19-debug",
+      "displayName": "linux-ninja-clang19-debug",
+      "configurePreset": "linux-ninja-clang19-debug",
+      "inherits": [
+        "base"
+      ]
+    },
+    {
+      "name": "linux-ninja-clang19-release",
+      "displayName": "linux-ninja-clang19-release",
+      "configurePreset": "linux-ninja-clang19-release",
+      "inherits": [
+        "base"
+      ]
+    }
+  ]
+}
