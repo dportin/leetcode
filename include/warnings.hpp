@@ -17,13 +17,16 @@
 
 #if defined(__GNUC__) || defined(__clang__)
     #define DISABLE_WARNING_SIGN_COMPARE DISABLE_WARNING(-Wsign-compare)
+    #define DISABLE_WARNING_UNUSED_PARAMETER DISABLE_WARNING(-Wunused-parameter)
 #if defined(__clang__)
 #else
 #endif
 #elif defined(_MSC_VER)
     #define DISABLE_WARNING_SIGN_COMPARE
+    #define DISABLE_WARNING_UNUSED_PARAMETER
 #else
     #define DISABLE_WARNING_SIGN_COMPARE
+    #define DISABLE_WARNING_UNUSED_PARAMETER
 #endif
 
 #endif // WARNINGS_HPP

@@ -8,7 +8,7 @@
 #include <algorithm>
 
 template <typename T>
-class SolutionTest : public ::testing::Test {
+class TwoSum : public ::testing::Test {
 
 protected:
 
@@ -18,9 +18,9 @@ protected:
 
 using Implementations = ::testing::Types<SolutionOnePass, SolutionTwoPass>;
 
-TYPED_TEST_SUITE(SolutionTest, Implementations);
+TYPED_TEST_SUITE(TwoSum, Implementations);
 
-TYPED_TEST(SolutionTest, Example1) {
+TYPED_TEST(TwoSum, Example1) {
 
     // Example 1:
 
@@ -37,7 +37,7 @@ TYPED_TEST(SolutionTest, Example1) {
 
 }
 
-TYPED_TEST(SolutionTest, Example2) {
+TYPED_TEST(TwoSum, Example2) {
 
     // Example 2:
 
@@ -53,7 +53,7 @@ TYPED_TEST(SolutionTest, Example2) {
 
 }
 
-TYPED_TEST(SolutionTest, Example3) {
+TYPED_TEST(TwoSum, Example3) {
 
     // Example 3:
 
