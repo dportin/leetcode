@@ -1,16 +1,17 @@
 cmake_minimum_required(VERSION 3.25.0 FATAL_ERROR)
 
 project(
-    AddTwoNumbers
+    LongestSubstringWithoutRepeatingCharacters
     VERSION 1.0.0.0
-    DESCRIPTION "Add Two Numbers (2)"
+    DESCRIPTION "Longest Substring Without Repeating Characters (3)"
     HOMEPAGE_URL "https://github.com/dportin/leetcode-solutions"
     LANGUAGES "CXX"
 )
 
 set(
     SOLUTION_SOURCE_FILES
-    "${CMAKE_CURRENT_LIST_DIR}/src/solution_default.cpp"
+    "${CMAKE_CURRENT_LIST_DIR}/src/solution_window.cpp"
+    "${CMAKE_CURRENT_LIST_DIR}/src/solution_window_index.cpp"
     "${CMAKE_CURRENT_LIST_DIR}/src/solution_test.cpp"
 )
 

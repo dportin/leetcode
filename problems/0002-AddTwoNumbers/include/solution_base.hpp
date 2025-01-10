@@ -11,7 +11,7 @@ public:
 
 };
 
-class Solution : public SolutionBase {
+class SolutionDefault : public SolutionBase {
 
 public:
 

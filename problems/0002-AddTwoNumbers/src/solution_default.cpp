@@ -1,7 +1,6 @@
 #include "solution_base.hpp"
-#include "warnings.hpp"
 
-LinkedList<int> Solution::addTwoNumbers(const LinkedList<int>& left, const LinkedList<int>& right) {
+LinkedList<int> SolutionDefault::addTwoNumbers(const LinkedList<int>& left, const LinkedList<int>& right) {
     
     LinkedList<int> result;
     LinkedList<int>::Node* lnode = left.head;

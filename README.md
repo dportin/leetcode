@@ -13,3 +13,7 @@ Run `cmake --list-presets` to list the available CMake presets. Then run
     ctest --preset $PRESET
 
 to build and run all solutions.
+
+## Dockerfile
+
+    docker build --no-cache --tag leetcode

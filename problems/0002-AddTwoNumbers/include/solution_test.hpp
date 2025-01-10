@@ -13,7 +13,7 @@ protected:
 
 };
 
-using Implementations = ::testing::Types<Solution>;
+using Implementations = ::testing::Types<SolutionDefault>;
 
 TYPED_TEST_SUITE(AddTwoNumbers, Implementations);
 
