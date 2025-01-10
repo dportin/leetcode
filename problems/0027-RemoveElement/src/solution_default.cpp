@@ -11,6 +11,6 @@ int SolutionDefault::removeElement(std::vector<int>& nums, int val) {
     }
 
     nums.resize(length);
-    return length;
+    return static_cast<int>(length);
 
 }
