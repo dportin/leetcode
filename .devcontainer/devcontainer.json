@@ -3,18 +3,19 @@
   "build": {
     "dockerfile": "Dockerfile"
   },
-  "settings": {
-    "cmake.configureOnOpen": false
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cmake-tools",
+        "ms-vscode.cpptools",
+        "ms-vscode.cpptools-themes",
+        "ms-vscode.cpptools-extension-pack",
+        "twxs.cmake"
+      ]
+    }
   },
-  "extensions": [
-    "ms-vscode.cmake-tools",
-    "ms-vscode.cpptools",
-    "ms-vscode.cpptools-themes",
-    "ms-vscode.cpptools-extension-pack",
-    "twxs.cmake"
-  ],
   "mounts": [
     "source=${localWorkspaceFolder},target=/workspace,type=bind"
   ],
-  "workspaceFolder": "/workspace"
+	"workspaceFolder": "/workspace"
 }
