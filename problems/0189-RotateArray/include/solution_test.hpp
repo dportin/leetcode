@@ -109,8 +109,8 @@ TYPED_TEST(RotateArray, AlgorithmStress) {
     std::vector<int> base(100);
     std::iota(base.begin(), base.end(), 0);
     
-    for (size_t i = 0; i < base.size(); ++i) {
-        for (size_t n = 0; n < 4; ++n) {
+    for (std::size_t i = 0; i < base.size(); ++i) {
+        for (std::size_t n = 0; n < 4; ++n) {
             
             std::vector<int> input = base;
             std::vector<int> expected = base;

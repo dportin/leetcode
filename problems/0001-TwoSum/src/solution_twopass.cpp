@@ -7,7 +7,7 @@ std::vector<int> SolutionTwoPass::twoSum(std::vector<int>& numbers, int target) 
 
     std::unordered_map<int, int> indices;
 
-    for (size_t i = 0; i < numbers.size(); ++i) {
+    for (std::size_t i = 0; i < numbers.size(); ++i) {
         indices[numbers[i]] = i;
     }
 

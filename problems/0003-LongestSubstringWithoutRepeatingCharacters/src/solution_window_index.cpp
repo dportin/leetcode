@@ -5,12 +5,12 @@
 
 int SolutionWindowIndex::lengthOfLongestSubstring(const std::string& str) {
 
-    size_t length = 0;
-    std::unordered_map<char, size_t> indices;
-    std::unordered_map<char, size_t>::const_iterator index;
+    std::size_t length = 0;
+    std::unordered_map<char, std::size_t> indices;
+    std::unordered_map<char, std::size_t>::const_iterator index;
     
-    size_t lo = 0;
-    size_t hi = 0;
+    std::size_t lo = 0;
+    std::size_t hi = 0;
 
     while (hi < str.size()) {
 

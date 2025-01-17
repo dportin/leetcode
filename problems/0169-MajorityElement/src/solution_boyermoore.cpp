@@ -20,7 +20,7 @@ int SolutionBoyerMoore::majorityElement(const std::vector<int>& nums) {
     // 7    [a,a,b,b,b,a,a] [a]         a           1           1
 
     int majority = 0;
-    size_t count = 0;
+    std::size_t count = 0;
 
     for (const auto& num : nums) {
 

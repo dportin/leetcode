@@ -4,7 +4,7 @@
 
 int SolutionHashTable::majorityElement(const std::vector<int>& nums) {
 
-    std::unordered_map<int, size_t> counts;
+    std::unordered_map<int, std::size_t> counts;
 
     for (const auto& num : nums) {
         auto [it, _] = counts.insert({num, 0});
@@ -12,7 +12,7 @@ int SolutionHashTable::majorityElement(const std::vector<int>& nums) {
     }
 
     int majority_num = 0;
-    size_t majority_count = 0;
+    std::size_t majority_count = 0;
     
     for (const auto& [num, count] : counts) {
         if (count > majority_count) {

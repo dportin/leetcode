@@ -8,7 +8,7 @@ void SolutionReverse::rotate(std::vector<int>& nums, int k) {
         return;
     }
 
-    size_t shift = k % nums.size();
+    std::size_t shift = k % nums.size();
     
     if (shift == 0) {
         return;
