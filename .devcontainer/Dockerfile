@@ -37,7 +37,6 @@ RUN mkdir llvm \
 RUN rm -rf /var/lib/apt/lists/* \
  && apt-get clean --yes --quiet
 
-# Create the user
 RUN groupadd --gid $USER_GID $USERNAME \
  && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME \
  && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
